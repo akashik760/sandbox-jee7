@@ -1,0 +1,32 @@
+apply plugin: 'war'
+
+def javaVersion = 1.8
+def defaultEncoding = 'UTF-8'
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
+
+repositories {
+    mavenCentral()
+}
+
+// ソースフォルダの場所を指定
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources{
+            srcDir 'src/main/resorces'
+        }
+    }
+}
+
+// Web 公開用のディレクトリを指定
+webAppDirName = 'WebContent'
+
+dependencies {
+    providedCompile 'javax:javaee-api:7.0'
+}
