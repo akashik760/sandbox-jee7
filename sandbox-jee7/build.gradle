@@ -12,6 +12,7 @@ tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 // ソースフォルダの場所を指定
@@ -30,9 +31,13 @@ sourceSets {
 webAppDirName = 'WebContent'
 
 dependencies {
-    compile 'com.h2database:h2:1.3.176'
+    
+    compile "com.mysema.querydsl:querydsl-jpa:3.6.6"
+    compile "com.mysema.querydsl:querydsl-apt:3.6.6:jpa" // Magic happens here
+    
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
     compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
+    compile 'com.h2database:h2:1.3.176'
     providedCompile 'javax:javaee-api:7.0'
     testCompile 'junit:junit:4.12'
     
