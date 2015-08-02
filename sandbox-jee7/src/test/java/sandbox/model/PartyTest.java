@@ -83,6 +83,8 @@ public class PartyTest {
         em.clear();
         // [verify] ------------------------------------------------------------
         // DBから再取得
+        // Q[Entity]クラスはquerydslが自動生成する（src/main/generatedに出力）
+        // gradleにquerydslが自動生成するためのタスクを定義している
         QParty party = QParty.party;
         JPAQuery query = new JPAQuery(em); 
         Party act = query.from( party ).where( party.id.eq( t1.id ) ).uniqueResult( party );        
