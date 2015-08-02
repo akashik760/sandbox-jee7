@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project-modules id="moduleCoreId" project-version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
 	<wb-module deploy-name="sandbox-jee7">
 		<property name="context-root" value="sandbox-jee7"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
 		<wb-resource deploy-path="/" source-path="WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/generated"/>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/akashikei/.gradle/caches/modules-2/files-2.1/com.mysema.querydsl/querydsl-jpa/3.6.3/8c29a22b6aa68ede3102f2047043e5556fc95033/querydsl-jpa-3.6.3.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>

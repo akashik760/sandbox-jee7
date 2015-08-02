@@ -25,6 +25,11 @@ sourceSets {
             srcDir 'src/main/resorces'
         }
     }
+    generated {
+        java {
+            srcDirs = ['src/main/generated']
+        }
+    }
 }
 
 // Web 公開用のディレクトリを指定
@@ -41,4 +46,33 @@ dependencies {
     providedCompile 'javax:javaee-api:7.0'
     testCompile 'junit:junit:4.12'
     
+}
+
+configurations {
+    querydslapt
+}
+
+task generateQueryDSL(type: JavaCompile, group: 'build', description: 'Generates the QueryDSL query types') {
+    source = sourceSets.main.java
+    classpath = configurations.compile + configurations.querydslapt
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+    ]
+    destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+}
+
+compileJava {
+    dependsOn generateQueryDSL
+    source generateQueryDSL.destinationDir
+}
+
+compileGeneratedJava {
+    dependsOn generateQueryDSL
+    options.warnings = false
+    classpath += sourceSets.main.runtimeClasspath
+}
+
+clean {
+    delete sourceSets.generated.java.srcDirs
 }
