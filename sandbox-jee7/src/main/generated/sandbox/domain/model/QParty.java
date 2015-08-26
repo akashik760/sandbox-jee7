@@ -1,15 +1,11 @@
-package sandbox.model;
+package sandbox.domain.model;
 
 import static com.mysema.query.types.PathMetadataFactory.*;
 
 import com.mysema.query.types.path.*;
+
 import com.mysema.query.types.PathMetadata;
-
 import javax.annotation.Generated;
-
-import sandbox.domain.model.Party;
-import sandbox.domain.model.User;
-
 import com.mysema.query.types.Path;
 import com.mysema.query.types.path.PathInits;
 
@@ -20,7 +16,7 @@ import com.mysema.query.types.path.PathInits;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QParty extends EntityPathBase<Party> {
 
-    private static final long serialVersionUID = 88593178L;
+    private static final long serialVersionUID = -452424674L;
 
     public static final QParty party = new QParty("party");
 

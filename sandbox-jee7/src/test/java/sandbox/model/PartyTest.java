@@ -10,6 +10,9 @@ import javax.persistence.Persistence;
 
 import org.junit.Test;
 
+import sandbox.domain.model.Party;
+import sandbox.domain.model.User;
+
 import com.mysema.query.jpa.impl.JPAQuery;
 
 public class PartyTest {

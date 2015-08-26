@@ -1,14 +1,11 @@
-package sandbox.model;
+package sandbox.domain.model;
 
 import static com.mysema.query.types.PathMetadataFactory.*;
 
 import com.mysema.query.types.path.*;
+
 import com.mysema.query.types.PathMetadata;
-
 import javax.annotation.Generated;
-
-import sandbox.domain.model.User;
-
 import com.mysema.query.types.Path;
 import com.mysema.query.types.path.PathInits;
 
@@ -19,7 +16,7 @@ import com.mysema.query.types.path.PathInits;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QUser extends EntityPathBase<User> {
 
-    private static final long serialVersionUID = -1659544297L;
+    private static final long serialVersionUID = -845712493L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 

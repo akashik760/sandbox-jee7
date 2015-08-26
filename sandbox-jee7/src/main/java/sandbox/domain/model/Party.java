@@ -1,4 +1,4 @@
-package sandbox.model;
+package sandbox.domain.model;
 
 import java.util.Date;
 import java.util.List;
